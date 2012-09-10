@@ -154,7 +154,7 @@ if [[ "$OS" = "2" ]]
 then
 sudo apt-get update -y
 sudo apt-get purge openjdk*
-sudo apt-get install python-software-properties vnc4server xubuntu-desktop unzip firefox -y
+sudo apt-get install python-software-properties vnc4server xfce4 unzip firefox -y
 ###### Installing Java with the following Method ########
 ### http://www.webupd8.org/2012/01/install-oracle-java-jdk-7-in-ubuntu-via.html ##
 #
