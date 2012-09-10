@@ -16,7 +16,7 @@
 # 6 September, 2012                                                                     #
 #########################################################################################
 
-read -p "What OS are you running? For Centos 'enter 1, for Ubuntu enter 2' " OS
+read -p "What OS are you running? 'For Centos Enter 1' 'For Ubuntu Enter 2' " OS
 
 if [[ "$OS" != "1" && "$OS" != "2" ]]
 then
