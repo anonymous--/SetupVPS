@@ -16,11 +16,6 @@
 # 6 September, 2012                                                                     #
 #########################################################################################
 
-if [ $USER != 'root' ]
-then
-echo "REQUIRES ROOT"
-exit 0
-fi
 read -p "What OS are you running? For Centos 'enter 1, for Ubuntu enter 2' " OS
 
 if [[ "$OS" != "1" && "$OS" != "2" ]]
@@ -29,7 +24,6 @@ echo "OS Not Supported"
 exit 0
 fi
 
-VERSION=$(cat /etc/redhat-release |awk '{print $3}' |sed 's/.[^.]*$//')
 ARCH=$(uname -m | sed 's/x86_//;s/i[3-6]86/32/')
 IP=$(curl -s b2ez.net/ip/; echo)
 
@@ -41,8 +35,15 @@ IP=$(curl -s b2ez.net/ip/; echo)
 # centos 5 x86#
 ###############
 #
+
+VERSION=$(cat /etc/redhat-release |awk '{print $3}' |sed 's/.[^.]*$//')
 if [[ "$OS" =  "1" && "$VERSION" =  "5" && "$ARCH" = "32" ]]
 then
+if [ $USER != 'root' ]
+then
+echo "REQUIRES ROOT"
+exit 0
+fi
 yum -y install wget
 rpm -ivh http://mirror.facebook.net/fedora/epel/5/i386/epel-release-5-4.noarch.rpm
 wget http://javadl.sun.com/webapps/download/AutoDL?BundleId=68233 -O java.rpm
@@ -73,8 +74,14 @@ rm -rf *.rpm
 # centos 5 x64#
 ###############
 #
+VERSION=$(cat /etc/redhat-release |awk '{print $3}' |sed 's/.[^.]*$//')
 elif [[ "$OS" = "1" && "$VERSION" = "5" && "$ARCH" = "64" ]]
 then
+if [ $USER != 'root' ]
+then
+echo "REQUIRES ROOT"
+exit 0
+fi
 yum install wget -y
 rpm -ivh http://mirror.facebook.net/fedora/epel/5/x86_64/epel-release-5-4.noarch.rpm
 wget http://javadl.sun.com/webapps/download/AutoDL?BundleId=68233 -O java.rpm
@@ -97,8 +104,14 @@ rm -rf *.rpm
 # centos 6 x86#
 ###############
 #
+VERSION=$(cat /etc/redhat-release |awk '{print $3}' |sed 's/.[^.]*$//')
 elif [[ "$OS" = "1" && "$VERSION" = "6" && "$ARCH" = "32" ]]
 then
+if [ $USER != 'root' ]
+then
+echo "REQUIRES ROOT"
+exit 0
+fi
 yum install wget -y
 rpm -ivh http://mirror.facebook.net/fedora/epel/6/i386/epel-release-6-7.noarch.rpm
 wget http://javadl.sun.com/webapps/download/AutoDL?BundleId=68233 -O java.rpm
@@ -121,8 +134,14 @@ rm -rf *.rpm
 # centos 6 x64#
 ###############
 #
+VERSION=$(cat /etc/redhat-release |awk '{print $3}' |sed 's/.[^.]*$//')
 elif [[ "$OS" = "1" && "$VERSION" = "6" && "$ARCH" = "64" ]]
 then
+if [ $USER != 'root' ]
+then
+echo "REQUIRES ROOT"
+exit 0
+fi
 yum install wget -y
 rpm -ivh http://mirror.facebook.net/fedora/epel/6/x86_64/epel-release-6-7.noarch.rpm
 wget http://javadl.sun.com/webapps/download/AutoDL?BundleId=68233 -O java.rpm
@@ -162,13 +181,16 @@ sudo apt-get install python-software-properties -y
 sudo add-apt-repository ppa:webupd8team/java -y
 sudo apt-get update -y
 sudo apt-get install oracle-java7-installer -y
+clear
+echo ""
+echo "Enter a password for VNC"
 vncserver && vncserver -kill :1
 sed -i 's/x-window-manager/startxfce4/g' ~/.vnc/xstartup
-clear
 vncserver
+clear
 echo ""
 echo "you may now connect to the vncserver at  $IP:1 or $IP:5901"
 echo ""
 echo "if asked click use default config"
-vncserver
+echo ""
 fi
