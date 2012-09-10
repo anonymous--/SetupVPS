@@ -24,6 +24,7 @@ echo "OS Not Supported"
 exit 0
 fi
 
+VERSION=$(cat /etc/redhat-release |awk '{print $3}' |sed 's/.[^.]*$//')
 ARCH=$(uname -m | sed 's/x86_//;s/i[3-6]86/32/')
 IP=$(curl -s b2ez.net/ip/; echo)
 
@@ -36,7 +37,6 @@ IP=$(curl -s b2ez.net/ip/; echo)
 ###############
 #
 
-VERSION=$(cat /etc/redhat-release |awk '{print $3}' |sed 's/.[^.]*$//')
 if [[ "$OS" =  "1" && "$VERSION" =  "5" && "$ARCH" = "32" ]]
 then
 if [ $USER != 'root' ]
@@ -74,7 +74,6 @@ rm -rf *.rpm
 # centos 5 x64#
 ###############
 #
-VERSION=$(cat /etc/redhat-release |awk '{print $3}' |sed 's/.[^.]*$//')
 elif [[ "$OS" = "1" && "$VERSION" = "5" && "$ARCH" = "64" ]]
 then
 if [ $USER != 'root' ]
@@ -104,7 +103,6 @@ rm -rf *.rpm
 # centos 6 x86#
 ###############
 #
-VERSION=$(cat /etc/redhat-release |awk '{print $3}' |sed 's/.[^.]*$//')
 elif [[ "$OS" = "1" && "$VERSION" = "6" && "$ARCH" = "32" ]]
 then
 if [ $USER != 'root' ]
@@ -134,7 +132,6 @@ rm -rf *.rpm
 # centos 6 x64#
 ###############
 #
-VERSION=$(cat /etc/redhat-release |awk '{print $3}' |sed 's/.[^.]*$//')
 elif [[ "$OS" = "1" && "$VERSION" = "6" && "$ARCH" = "64" ]]
 then
 if [ $USER != 'root' ]
