@@ -59,6 +59,7 @@ rpm -ivh --force --nodeps http://mirror.centos.org/centos/5/extras/i386/RPMS/xfc
 #yum groupinstall "XFCE-4.4" -y
 yum install xfce* -y
 yum -y install nano unzip xkill firefox vnc-server xorg-x11-server-Xorg gdm xorg-x11-fonts-* libXtst-devel-*
+yum install xfce* -y
 clear
 echo ""
 echo "Enter a password for VNC"
@@ -89,6 +90,7 @@ rpm -Uvh java.rpm
 #yum groupinstall "XFCE-4.4" -y
 yum install xfce* -y
 yum -y install nano unzip xkill firefox vnc-server xorg-x11-server-Xorg gdm xorg-x11-fonts-* libXtst-devel-*
+yum install xfce* -y
 clear
 echo ""
 echo "Enter a password for VNC"
