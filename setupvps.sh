@@ -56,7 +56,8 @@ yum install xfce4-settings-4.6.5-3.el5.i386.rpm -y
 rpm -ivh --force --nodeps http://mirror.centos.org/centos/5/extras/i386/RPMS/xfce-mcs-manager-4.4.2-1.el5.centos.i386.rpm
 #
 ###
-yum groupinstall "XFCE-4.4" -y
+#yum groupinstall "XFCE-4.4" -y
+yum install xfce* -y
 yum -y install nano unzip xkill firefox vnc-server xorg-x11-server-Xorg gdm xorg-x11-fonts-* libXtst-devel-*
 clear
 echo ""
@@ -85,7 +86,8 @@ yum install wget -y
 rpm -ivh http://mirror.facebook.net/fedora/epel/5/x86_64/epel-release-5-4.noarch.rpm
 wget http://javadl.sun.com/webapps/download/AutoDL?BundleId=68233 -O java.rpm
 rpm -Uvh java.rpm
-yum groupinstall "XFCE-4.4" -y
+#yum groupinstall "XFCE-4.4" -y
+yum install xfce* -y
 yum -y install nano unzip xkill firefox vnc-server xorg-x11-server-Xorg gdm xorg-x11-fonts-* libXtst-devel-*
 clear
 echo ""
@@ -183,6 +185,7 @@ echo ""
 echo "Enter a password for VNC"
 vncserver && vncserver -kill :1
 sed -i 's/x-window-manager/startxfce4/g' ~/.vnc/xstartup
+mkdir -p ~/jagexcache/runescape/LIVE
 vncserver
 clear
 echo ""
