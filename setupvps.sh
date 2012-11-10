@@ -57,8 +57,7 @@ rpm -ivh --force --nodeps http://mirror.centos.org/centos/5/extras/i386/RPMS/xfc
 #
 ###
 #yum groupinstall "XFCE-4.4" -y
-#yum install xfce* -y
-yum install lxde -y
+yum install xfce* -y
 yum -y install nano unzip xkill firefox vnc-server xorg-x11-server-Xorg gdm xorg-x11-fonts-* libXtst-devel-*
 clear
 echo ""
@@ -88,8 +87,7 @@ rpm -ivh http://mirror.facebook.net/fedora/epel/5/x86_64/epel-release-5-4.noarch
 wget http://javadl.sun.com/webapps/download/AutoDL?BundleId=68233 -O java.rpm
 rpm -Uvh java.rpm
 #yum groupinstall "XFCE-4.4" -y
-#yum install xfce* -y
-yum install lxde -y
+yum install xfce* -y
 yum -y install nano unzip xkill firefox vnc-server xorg-x11-server-Xorg gdm xorg-x11-fonts-* libXtst-devel-*
 clear
 echo ""
@@ -118,8 +116,7 @@ yum install wget -y
 rpm -ivh http://mirror.facebook.net/fedora/epel/6/i386/epel-release-6-7.noarch.rpm
 wget http://javadl.sun.com/webapps/download/AutoDL?BundleId=68233 -O java.rpm
 rpm -Uvh java.rpm
-#yum groupinstall "Xfce" "Desktop" -y
-yum install -y lxde
+yum groupinstall "Xfce" "Desktop" -
 yum install -y nano unzip xkill firefox tigervnc-server xorg-x11-server-Xorg gdm xorg-x11-fonts-* libXtst-devel-*
 clear
 echo ""
@@ -148,8 +145,7 @@ yum install wget -y
 rpm -ivh http://mirror.facebook.net/fedora/epel/6/x86_64/epel-release-6-7.noarch.rpm
 wget http://javadl.sun.com/webapps/download/AutoDL?BundleId=68233 -O java.rpm
 rpm -Uvh java.rpm
-#yum groupinstall "Xfce" "Desktop" -y
-yum install lxde -y
+yum groupinstall "Xfce" "Desktop" -y
 yum install -y nano unzip xkill firefox tigervnc-server xorg-x11-server-Xorg gdm xorg-x11-fonts-* libXtst-devel-*
 clear
 echo ""
