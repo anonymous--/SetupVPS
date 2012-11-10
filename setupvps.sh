@@ -12,8 +12,8 @@
 # http://wiki.centos.org/HowTos/OS_Protection                                           #
 #                                                                                       #
 # You may edit or modify or redistribute this script.                                   #
-# Version 2.00                                                                          #
-# 6 September, 2012                                                                     #
+# Version 2.01                                                                          #
+# 10 November, 2012                                                                     #
 #########################################################################################
 
 read -p "What OS are you running? 'For Centos Enter 1' 'For Ubuntu Enter 2' " OS
@@ -57,9 +57,9 @@ rpm -ivh --force --nodeps http://mirror.centos.org/centos/5/extras/i386/RPMS/xfc
 #
 ###
 #yum groupinstall "XFCE-4.4" -y
-yum install xfce* -y
+#yum install xfce* -y
+yum install lxde -y
 yum -y install nano unzip xkill firefox vnc-server xorg-x11-server-Xorg gdm xorg-x11-fonts-* libXtst-devel-*
-yum install xfce* -y
 clear
 echo ""
 echo "Enter a password for VNC"
@@ -88,9 +88,9 @@ rpm -ivh http://mirror.facebook.net/fedora/epel/5/x86_64/epel-release-5-4.noarch
 wget http://javadl.sun.com/webapps/download/AutoDL?BundleId=68233 -O java.rpm
 rpm -Uvh java.rpm
 #yum groupinstall "XFCE-4.4" -y
-yum install xfce* -y
+#yum install xfce* -y
+yum install lxde -y
 yum -y install nano unzip xkill firefox vnc-server xorg-x11-server-Xorg gdm xorg-x11-fonts-* libXtst-devel-*
-yum install xfce* -y
 clear
 echo ""
 echo "Enter a password for VNC"
@@ -118,7 +118,8 @@ yum install wget -y
 rpm -ivh http://mirror.facebook.net/fedora/epel/6/i386/epel-release-6-7.noarch.rpm
 wget http://javadl.sun.com/webapps/download/AutoDL?BundleId=68233 -O java.rpm
 rpm -Uvh java.rpm
-yum groupinstall "Xfce" "Desktop" -y
+#yum groupinstall "Xfce" "Desktop" -y
+yum install -y lxde
 yum install -y nano unzip xkill firefox tigervnc-server xorg-x11-server-Xorg gdm xorg-x11-fonts-* libXtst-devel-*
 clear
 echo ""
@@ -147,7 +148,8 @@ yum install wget -y
 rpm -ivh http://mirror.facebook.net/fedora/epel/6/x86_64/epel-release-6-7.noarch.rpm
 wget http://javadl.sun.com/webapps/download/AutoDL?BundleId=68233 -O java.rpm
 rpm -Uvh java.rpm
-yum groupinstall "Xfce" "Desktop" -y
+#yum groupinstall "Xfce" "Desktop" -y
+yum install lxde -y
 yum install -y nano unzip xkill firefox tigervnc-server xorg-x11-server-Xorg gdm xorg-x11-fonts-* libXtst-devel-*
 clear
 echo ""
@@ -174,7 +176,8 @@ if [[ "$OS" = "2" ]]
 then
 sudo apt-get update -y
 sudo apt-get purge openjdk*
-sudo apt-get install python-software-properties vnc4server xfce4 unzip firefox -y
+sudo apt-get install python-software-properties vnc4server unzip firefox -y
+sudp apt-get install lxde -y
 ###### Installing Java with the following Method ########
 ### http://www.webupd8.org/2012/01/install-oracle-java-jdk-7-in-ubuntu-via.html ##
 #
