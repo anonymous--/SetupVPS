@@ -44,6 +44,7 @@ then
 echo "REQUIRES ROOT"
 exit 0
 fi
+yum update
 yum -y install wget
 rpm -ivh http://mirror.facebook.net/fedora/epel/5/i386/epel-release-5-4.noarch.rpm
 wget http://javadl.sun.com/webapps/download/AutoDL?BundleId=68233 -O java.rpm
@@ -82,6 +83,7 @@ then
 echo "REQUIRES ROOT"
 exit 0
 fi
+yum update
 yum install wget -y
 rpm -ivh http://mirror.facebook.net/fedora/epel/5/x86_64/epel-release-5-4.noarch.rpm
 wget http://javadl.sun.com/webapps/download/AutoDL?BundleId=68233 -O java.rpm
@@ -173,7 +175,7 @@ then
 sudo apt-get update -y
 sudo apt-get purge openjdk*
 sudo apt-get install python-software-properties vnc4server unzip firefox -y
-sudp apt-get install lxde -y
+sudo apt-get install lxde -y
 ###### Installing Java with the following Method ########
 ### http://www.webupd8.org/2012/01/install-oracle-java-jdk-7-in-ubuntu-via.html ##
 #
